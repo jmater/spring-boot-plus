@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.my.test.mapper.AccountInfoMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, acct_no, acct_name, balance, remark, create_time, update_time
+    </sql>
+
+    <select id="getAccountInfoById" resultType="io.geekidea.springbootplus.test.vo.AccountInfoQueryVo">
+        select
+        <include refid="Base_Column_List"/>
+        from account_info where id = #{id}
+    </select>
+
+    <select id="getAccountInfoPageList" resultType="io.geekidea.springbootplus.test.vo.AccountInfoQueryVo">
+        select
+        <include refid="Base_Column_List"/>
+        from account_info
+    </select>
+
+</mapper>

@@ -1,0 +1,21 @@
+spring-boot-plus:
+  # 是否启用ansi控制台输出有颜色的字体，local环境建议开启，服务器环境设置为false
+  enable-ansi: false
+
+server:
+  port: 8888
+  servlet:
+    context-path: /
+spring:
+  datasource:
+    url: jdbc:h2:~/test
+    username: sa
+    password:
+
+  # Redis配置
+  redis:
+    database: 0
+    host: localhost
+    password:
+    port: 6379
+
