@@ -18,6 +18,8 @@ package io.geekidea.springbootplus.common.api;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -41,25 +43,30 @@ import java.util.Map;
 @Accessors(chain = true)
 @Builder
 @AllArgsConstructor
+@ApiModel(description = "通用响应返回对象")
 public class ApiResult<T> implements Serializable {
     /**
      * 响应码
      */
-    private int code;
+    @ApiModelProperty(value = "结果代码", position = 0)
+    protected int code;
 
     /**
      * 响应消息
      */
+    @ApiModelProperty(value = "错误信息", position = 1)
     private String msg;
 
     /**
      * 是否成功
      */
+    @ApiModelProperty(value = "是否成功", position = 2, example = "true")
     private boolean success;
 
     /**
      * 响应数据
      */
+    @ApiModelProperty(value = "结果数据", position = 3 )
     private T data;
 
     /**

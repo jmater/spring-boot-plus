@@ -33,7 +33,7 @@ public class HelloScheduled {
     /**
      * 每小时执行一次
      */
-    @Scheduled(cron = "0 0 0/1 * * ? ")
+    //@Scheduled(cron = "0 0 0/1 * * ? ")
     public void hello() {
         log.debug("Test Scheduled...");
     }

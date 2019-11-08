@@ -18,6 +18,7 @@ import javax.validation.Valid;
 
 import io.geekidea.springbootplus.common.vo.Paging;
 import io.geekidea.springbootplus.common.param.IdParam;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * <pre>
@@ -31,6 +32,7 @@ import io.geekidea.springbootplus.common.param.IdParam;
 @RestController
 @RequestMapping("/fooBar")
 @Api("FooBar API")
+@ApiIgnore
 public class FooBarController extends BaseController {
 
     @Autowired

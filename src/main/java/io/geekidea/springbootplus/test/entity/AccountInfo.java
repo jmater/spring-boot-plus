@@ -1,4 +1,4 @@
-package com.test.my.test.entity;
+package io.geekidea.springbootplus.test.entity;
 
 import java.math.BigDecimal;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -25,7 +25,7 @@ import javax.validation.constraints.NotNull;
 @Data
 @Accessors(chain = true)
 @EqualsAndHashCode(callSuper = true)
-@ApiModel(value = "AccountInfo对象", description = "")
+@ApiModel(value = "账户信息", description = "")
 public class AccountInfo extends BaseEntity {
 
     private static final long serialVersionUID = 1L;

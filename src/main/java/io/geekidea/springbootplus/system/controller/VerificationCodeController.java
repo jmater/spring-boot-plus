@@ -31,6 +31,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
@@ -50,6 +51,7 @@ import java.util.concurrent.TimeUnit;
 @Controller
 @Api("获取验证码 API")
 @RequestMapping("/verificationCode")
+@ApiIgnore
 public class VerificationCodeController {
 
     @Autowired

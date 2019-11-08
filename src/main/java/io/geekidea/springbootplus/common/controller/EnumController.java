@@ -27,6 +27,7 @@ import org.reflections.Reflections;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.annotation.PostConstruct;
 import java.lang.reflect.Method;
@@ -42,6 +43,7 @@ import java.util.*;
  */
 @RestController
 @Slf4j
+@ApiIgnore
 public class EnumController {
 
     /**

@@ -26,6 +26,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
@@ -41,6 +42,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAdminServer
 @MapperScan({"io.geekidea.springbootplus.**.mapper"})
 @ServletComponentScan
+@EnableRedisHttpSession
 @SpringBootApplication
 public class SpringBootPlusApplication {
 

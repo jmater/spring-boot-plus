@@ -1,9 +1,9 @@
-package com.test.my.test.mapper;
+package io.geekidea.springbootplus.test.mapper;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.test.my.test.entity.AccountInfo;
+import io.geekidea.springbootplus.test.entity.AccountInfo;
 import io.geekidea.springbootplus.test.param.AccountInfoQueryParam;
 import io.geekidea.springbootplus.test.vo.AccountInfoQueryVo;
 import org.apache.ibatis.annotations.Param;

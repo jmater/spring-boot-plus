@@ -25,13 +25,14 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
+
+import static io.geekidea.springbootplus.util.HttpServletRequestUtil.getRequest;
 
 /**
  * 登陆控制器
@@ -48,12 +49,22 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @PostMapping("/login")
+    @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
     @ApiOperation(value = "登陆", notes = "系统用户登陆", response = LoginSysUserTokenVo.class)
-    public ApiResult login(@Valid @RequestBody LoginParam loginParam, HttpServletResponse response) throws Exception {
+    public ApiResult login(@RequestParam(value="username") String username,
+                           @RequestParam(value="password")String password,
+                           @RequestParam(value="verifyToken")String verifyToken,
+                           @RequestParam(value="code")String code, HttpServletResponse response) throws Exception {
+        LoginParam loginParam = new LoginParam();
+        loginParam.setUsername(username);
+        loginParam.setPassword(password);
+        loginParam.setVerifyToken(verifyToken);
+        loginParam.setCode(code);
         LoginSysUserTokenVo loginSysUserTokenVo = loginService.login(loginParam);
         // 设置token响应头
         response.setHeader(JwtTokenUtil.getTokenName(), loginSysUserTokenVo.getToken());
+        HttpSession session = getRequest().getSession();
+        session.setAttribute("acctId",loginSysUserTokenVo.getLoginSysUserVo().getId());//用用户id当做acctid
         return ApiResult.ok(loginSysUserTokenVo, "登陆成功");
     }
 

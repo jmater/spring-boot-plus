@@ -24,6 +24,7 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -38,6 +39,7 @@ import java.io.IOException;
 @Api("Shiro Example")
 @RestController
 @RequestMapping("/shiroExample")
+@ApiIgnore
 public class ShiroExampleController {
 
     @RequiresRoles("admin")

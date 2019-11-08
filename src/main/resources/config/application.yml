@@ -33,6 +33,8 @@ spring:
 spring:
   profiles:
     active: '@profileActive@'
+  session:
+    store-type: redis
 
 # logback.xml中有详细的日志配置
 logging:
@@ -119,6 +121,7 @@ spring-boot-plus:
     # 是否允许发送cookie
     allow-credentials: true
     # 允许访问的请求方式
+    # 允许访问的请求方式
     allowed-methods: OPTION,GET,POST
     # 允许响应的头
     exposed-headers: token
@@ -168,7 +171,7 @@ spring-boot-plus:
       - urls: /,/favicon.ico,/actuator/**,/instances/**,/assets/**,/sba-settings.js,/applications/**
         permission: anon
         # 测试
-      - url: /sysUser/getPageList
+      - urls: /sysUser/getPageList,/accountInfo/**
         permission: anon
   ######################## Spring Shiro end ##########################
 
@@ -218,8 +221,6 @@ mybatis-plus:
   # mapper xml映射路径
   mapper-locations: classpath*:mapper/**/*Mapper.xml
 ################################ mybatis-plus end ##################################
-
-
 ############################### DRUID数据源配置 start ################################
 ---
 spring:
@@ -282,11 +283,11 @@ swagger:
   base:
     package: io.geekidea.springbootplus
   contact:
-    email: geekidea@qq.com
-    name: geekidea
+    email:
+    name:
     url: ''
   description: ''
-  title: spring-boot-plus
+  title: 测试项目
   url: ''
   version: 1.0
 #################################### Swagger end ###################################

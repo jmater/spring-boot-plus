@@ -33,6 +33,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
 
@@ -48,6 +49,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/sysUser")
 @Api("系统用户 API")
+@ApiIgnore
 public class SysUserController extends BaseController {
 
     @Autowired

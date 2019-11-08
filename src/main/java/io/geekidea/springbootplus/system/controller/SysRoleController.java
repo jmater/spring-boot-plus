@@ -30,6 +30,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.validation.Valid;
 
@@ -45,6 +46,7 @@ import javax.validation.Valid;
 @RestController
 @RequestMapping("/sysRole")
 @Api("系统角色 API")
+@ApiIgnore
 public class SysRoleController extends BaseController {
 
     @Autowired

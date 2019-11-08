@@ -17,11 +17,19 @@
 package io.geekidea.springbootplus.util;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import javax.annotation.PostConstruct;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author geekidea
@@ -31,10 +39,13 @@ import javax.annotation.PostConstruct;
 @Slf4j
 public class RedisCacheUtil {
 
+    private static Logger logger = LoggerFactory.getLogger(RedisCacheUtil.class);
     private static RedisCacheUtil redisCacheUtil;
 
     @Autowired
     private RedisTemplate redisTemplate;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     /**
      * 将当前对象赋值给静态对象,调用spring组件: redisCacheUtil.redisTemplate.xxx()
@@ -43,4 +54,5 @@ public class RedisCacheUtil {
     public void init(){
         redisCacheUtil = this;
     }
+
 }

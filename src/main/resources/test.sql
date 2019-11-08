@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `account_info`
 -- ----------------------------
 -- Records of account
 -- ----------------------------
-INSERT INTO account_info (id, acct_no, acct_name, balance, remark, create_time, update_time)
-    VALUES (1, '10001', '张三', 0.0, 'remark...', '2019-11-01 14:05:14', null);
-INSERT INTO account_info (id, acct_no, acct_name, balance, remark, create_time, update_time)
-    VALUES (2, '200001', '李四', 1000.0, null, '2019-11-05 14:05:14', null);
+-- INSERT INTO account_info (id, acct_no, acct_name, balance, remark, create_time, update_time)
+--     VALUES (1, '10001', '张三', 0.0, 'remark...', '2019-11-01 14:05:14', null);
+-- INSERT INTO account_info (id, acct_no, acct_name, balance, remark, create_time, update_time)
+--     VALUES (2, '200001', '李四', 1000.0, null, '2019-11-05 14:05:14', null);

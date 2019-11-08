@@ -26,6 +26,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -39,6 +40,7 @@ import java.util.List;
 @Slf4j
 @Controller
 @RequestMapping("/download")
+@ApiIgnore
 public class DownloadController {
 
     @Autowired
