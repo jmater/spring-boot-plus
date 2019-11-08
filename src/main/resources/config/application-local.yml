@@ -30,8 +30,8 @@ spring:
   redis:
     database: 0
     host: localhost
-    password: 0ac94e4e647e4b3d95e9de1ca116b5a2
-    port: 6479
+    password:
+    port: 6379
 
 
 # logback.xml中有详细的日志配置
