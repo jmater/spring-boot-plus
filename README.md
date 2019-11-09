@@ -4,12 +4,13 @@
 测试代码位于src/test/io.geekidea.springbootplus下面.
 ### 运行说明
 1. 项目导入到ide当中,注意是maven项目.  
-2. 启用redis 2.8以上版本，默认端口6379，无密码.  
+2. 启用redis 2.8以上版本，默认端口6379，默认密码: 0ac94e4e647e4b3d95e9de1ca116b5a2.  
 3. 运行SpringBootPlusApplication.java启动项目,默认运行端口8888.  
-4. 默认项目context path是根路径"/",访问url: http://127.0.0.1:8888/,已经集成了spring-boot-admin。  
-5. swagger文档路径 http://127.0.0.1:8888/docs
-6. 账户测试程序: TestAcct.java. 并发测试程序: TestAcctLocker.java,通过Junit执行
-
+4. 默认项目context path是根路径"/",访问url: http://127.0.0.1:8888/,已经集成了spring-boot-admin.  
+5. swagger文档路径 http://127.0.0.1:8888/docs.
+6. 账户测试程序: TestAcct.java. 并发测试程序: TestAcctLocker.java,通过Junit执行.
+7. 接口1路径：/accountInfo/detail. 
+8. 接口2路径: /accountInfo/transfer.
 ### Technology stack
 Component| Version |  Remark
 -|-|-

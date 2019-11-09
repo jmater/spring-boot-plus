@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Random;
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -37,7 +38,9 @@ public class TestAcctLocker {
         for (int i = 0; i < 5; i++) {
             pool.submit(() -> {
                 try {
-                    randomAccountLocker.getWriteLock(acctId,acctNo,timeOut,maxLock);
+                    String locker = randomAccountLocker.getWriteLock(acctId,acctNo,timeOut,maxLock);
+                    Thread.sleep(new Random().nextInt(10) * 1000);
+                    randomAccountLocker.releaseWriteLock(acctId,acctNo,locker);
                 } catch (Exception e){
                     e.printStackTrace();
                 }
