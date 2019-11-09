@@ -112,7 +112,7 @@ public class AccountInfoController extends BaseController {
         Long acctId = transactionRequest.getAcctId();
         Long targetAcctId = transactionRequest.getTargetAcctId();
         AccountInfo accountInfo,targetAccountInfo;
-        if(acctId != null || acctId.longValue() == 0){
+        if(acctId != null && acctId.longValue() > 0){
             accountInfo = accountInfoService.getById(acctId);
             if(accountInfo == null){
                 return  ApiResult.fail("当前账号不存在");
@@ -125,7 +125,7 @@ public class AccountInfoController extends BaseController {
         }else{
             return ApiResult.fail("必须填写账号id");
         }
-        if(targetAcctId != null || acctId.longValue() == 0){
+        if(targetAcctId != null && acctId.longValue() > 0){
             targetAccountInfo = accountInfoService.getById(targetAcctId);
             if(targetAccountInfo == null){
                 return ApiResult.fail("对方账号不存在");
