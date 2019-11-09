@@ -81,7 +81,7 @@ public class AccountInfoController extends BaseController {
 
 
     @RequestMapping(value = "/transfer", method = RequestMethod.POST,produces = {"application/json;charset=UTF-8"})
-    @ApiOperation(value = "内部转账", notes = "内部转账交易")
+    @ApiOperation(value = "内部转账", notes = "内部转账交易，交易成功则返回当前账号的信息")
     public ApiResult<AccountInfo> acctTransfer(@ApiParam(value = "交易要素", required = true)
                                       @RequestBody TransactionRequest transactionRequest){
         if(transactionRequest == null){

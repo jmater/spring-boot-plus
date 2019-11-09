@@ -62,6 +62,7 @@ public class TransactionRequest {
     /**
      * 交易备注
      */
+    @ApiModelProperty(value = "交易备注")
     private String remark;
 
     public Long getAcctId() {
