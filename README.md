@@ -1,7 +1,7 @@
 ### 基本说明
 本测试项目基于Spring Boot Plus 脚手架项目,已经修改为使用内存数据库进行测试.
-主要测试代码位于src/main/java/io/geekidea/springbootplus/test下面.
-测试代码位于src/test/io.geekidea.springbootplus下面.
+主要代码位于src/main/java/io/geekidea/springbootplus/test下面.
+测试代码位于src/test/io/geekidea/springbootplus下面.
 ### 运行说明
 1. 项目导入到ide当中,注意是maven项目.  
 2. 启用redis 2.8以上版本，默认端口6379，默认密码: 0ac94e4e647e4b3d95e9de1ca116b5a2.  
